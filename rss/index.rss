@@ -1,4 +1,43 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Todd Levin</title><description>Things that intrigue me</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Thu, 01 Oct 2015 20:38:21 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Four stages of competence in programming</title><description>&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2015/10/Thoughts.jpg" alt=""&gt;&lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Todd Levin</title><description>Things that intrigue me</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Fri, 02 Oct 2015 07:57:36 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Data structures: stack in practice</title><description>&lt;p&gt;I have been looking into different data structures as I prepare for Hack Reactor and the one I would like to talk about here is a stack.  I ran across this problem on &lt;a href="http://www.coderbyte.com/CodingArea/Editor.php?ct=Bracket%20Matcher&amp;amp;lan=JavaScript"&gt;Coderbyte&lt;/a&gt; and it seems like a perfect candidate for application of this concept.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Using the JavaScript language,&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;</description><link>http://localhost:2368/data-structures-stack/</link><guid isPermaLink="false">e208b9b9-00df-4dee-827c-559e9d7ac1d3</guid><category>JavaScript</category><dc:creator>Todd Levin</dc:creator><pubDate>Fri, 02 Oct 2015 02:20:00 GMT</pubDate><content:encoded>&lt;p&gt;I have been looking into different data structures as I prepare for Hack Reactor and the one I would like to talk about here is a stack.  I ran across this problem on &lt;a href="http://www.coderbyte.com/CodingArea/Editor.php?ct=Bracket%20Matcher&amp;amp;lan=JavaScript"&gt;Coderbyte&lt;/a&gt; and it seems like a perfect candidate for application of this concept.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Using the JavaScript language, have the function BracketMatcher(str) take the str parameter being passed and return 1 if the brackets are correctly matched and each one is accounted for. Otherwise return 0. For example: if str is "(hello (world))", then the output should be 1, but if str is "((hello (world))" the the output should be 0 because the brackets do not correctly match up. Only "(" and ")" will be used as brackets. If str contains no brackets return 1.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id="whatisastack"&gt;What is a stack?&lt;/h4&gt;
+
+&lt;p&gt;Think of a stack as a can of Pringles, you can add chips and remove chips from only one side. A stack is a basic linear data structure where the last value added in is the first value out.  It often is implemented as an array or a linked list since a stack only needs very basic methods to control access such as &lt;code&gt;pop()&lt;/code&gt; to remove a value and &lt;code&gt;push()&lt;/code&gt; to add a value.  The best way to examine it further is to see it in action.&lt;/p&gt;
+
+&lt;h4 id="bracketmatcher"&gt;BracketMatcher&lt;/h4&gt;
+
+&lt;p&gt;Let's examine what the problem asks for and why a stack is the appropriate data structure for the job.  The issue with balancing brackets is in order to properly implement, we need to keep track of them as they go since an open bracket &lt;code&gt;(&lt;/code&gt; is not always going to be followed by it's pair in the case of nested brackets as seen in the example &lt;code&gt;(hello (world))&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here is where a stack is good.  Each &lt;code&gt;(&lt;/code&gt; it comes across will be added to the top and is removed only when a &lt;code&gt;)&lt;/code&gt; is encountered.  A balanced string will have an empty stack at the end of it.  Let's see my solution to the problem.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function BracketMatcher(str){
+  var stack = [];
+  for(var i = 0; i &amp;lt; str.length; i++){
+    if(str[i] === '('){
+      stack.push(str[i]);
+   } else if ( str[i] === ')'){
+     if(stack[stack.length-1] === '('){
+       stack.pop();
+     } else {
+       return 0;
+     }
+   }
+ }
+ if( stack.length === 0 ){
+   return 1;
+ }
+ return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We initialize a stack in the form of an array and iterate across the string.  As it goes it will add and remove &lt;code&gt;(&lt;/code&gt;'s from the stack.  If all goes well we will have a balanced string indicated by an empty stack after the iteration.  If so, we have our return value of 1.&lt;/p&gt;</content:encoded></item><item><title>Four stages of competence in programming</title><description>&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2015/10/Thoughts.jpg" alt=""&gt;&lt;/p&gt;
 
 &lt;p&gt;I started learning how to code in JavaScript in early 2015 and I had no direction, instruction, or plan.  In fact I didn't even know that I wanted to learn JavaScript, I just heard of this "coding" thing on the internet.&lt;/p&gt;
 
