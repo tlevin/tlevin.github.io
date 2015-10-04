@@ -1,4 +1,34 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Todd Levin</title><description>Things that intrigue me</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Sat, 03 Oct 2015 03:31:08 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Data structures: stack in practice</title><description>&lt;p&gt;I have been looking into different data structures as I prepare for Hack Reactor and the one I would like to talk about here is a stack.  I ran across this problem on &lt;a href="http://www.coderbyte.com/CodingArea/Editor.php?ct=Bracket%20Matcher&amp;amp;lan=JavaScript"&gt;Coderbyte&lt;/a&gt; and it seems like a perfect candidate for application of this concept.&lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Todd Levin</title><description>Things that intrigue me</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Sun, 04 Oct 2015 18:02:40 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>The Night Before Hack Reactor</title><description>&lt;p&gt;It is hard to express the emotions one goes through on the verge of a monumental endeavor such as Hack Reactor.   Hack Reactor is a immersive coding coding bootcamp in San Francisco that takes you from a base knowledge of coding and transforms you into an employable software engineer.   Taking&lt;/p&gt;</description><link>http://localhost:2368/the-night-before-hack-reactor/</link><guid isPermaLink="false">4e400d58-1964-4939-8742-865ad671d586</guid><category>Hack Reactor</category><dc:creator>Todd Levin</dc:creator><pubDate>Sun, 04 Oct 2015 18:00:24 GMT</pubDate><content:encoded>&lt;p&gt;It is hard to express the emotions one goes through on the verge of a monumental endeavor such as Hack Reactor.   Hack Reactor is a immersive coding coding bootcamp in San Francisco that takes you from a base knowledge of coding and transforms you into an employable software engineer.   Taking a 4 year computer science degree and condensing it to 3 months.&lt;/p&gt;
+
+&lt;p&gt;I believe that is how diamonds are made from carbon.   A whole lot of pressure. &lt;/p&gt;
+
+&lt;h3 id="agiledevelopment"&gt;Agile development&lt;/h3&gt;
+
+&lt;p&gt;I didn't know about the concept of &lt;a href="https://en.wikipedia.org/wiki/Agile_software_development"&gt;agile development&lt;/a&gt; until I started looking into the Hack Reactor program.  It is a set of software development methods that focus on constant iteration on design and plan, continuous improvement and rapid response to change.&lt;/p&gt;
+
+&lt;p&gt;The folks at Hack Reactor run the bootcamp curriculum based on this concept.  Different topics are divided into two day sprints that requires the students to deep dive into a subject, and then immediately change to something new.  That keeps people constantly learning and reacting to a fast pace environment.  The other benefit of agile development at Hack Reactor is the curriculum is never stale, it adheres to an evolutionary development mindset where change is based on weekly feedback.&lt;/p&gt;
+
+&lt;h3 id="threemonthsremoved"&gt;Three months removed&lt;/h3&gt;
+
+&lt;p&gt;The day at Hack Reactor runs from 9am to 8pm Monday through Saturday. If you are just doing the scheduled day a 66 hour work week would make most people pause.  Consider then that a good number of people will stay around 1-2 hours after each day for study or to catch up on the work of the current sprint.  I have never experienced a 80 hour work week, but I will have to prepare myself for it.  Family and friends, I'll see you in January.&lt;/p&gt;
+
+&lt;h3 id="socialnetworking"&gt;Social networking&lt;/h3&gt;
+
+&lt;p&gt;The technical skills of a software engineer are only one aspect of what Hack Reactor teaches.  The common intensive program that you and your cohort experiences builds an instant bond.  Social nights every Saturday night allows for the releasing of the stress and tension of the week as well as building on personal connections. The focus on cooperative collaboration is stressed through pair programming and group projects since in the industry, you are rarely working solo on a project.  &lt;/p&gt;
+
+&lt;p&gt;After graduation you are part of an alumni network that rivals some universities in how focused it is in one industry.  The chance of running into a Hack Reactor graduate grows with every cohort that graduates.  Having an instant professional network of software engineers upon graduation is a benefit that I can't even fathom at this point.&lt;/p&gt;
+
+&lt;h3 id="onefootinfrontoftheother"&gt;One foot in front of the other&lt;/h3&gt;
+
+&lt;p&gt;Rather than look at the sheer enormity of material I will ingest over the next three months, I must look at it one day at a time, one sprint at a time and just keep going.&lt;/p&gt;
+
+&lt;p&gt;The Chinese philosopher Lao-tzu put it best: &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A journey of a thousand miles begins with a single step. &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here's to the first step.&lt;/p&gt;</content:encoded></item><item><title>Data structures: stack in practice</title><description>&lt;p&gt;I have been looking into different data structures as I prepare for Hack Reactor and the one I would like to talk about here is a stack.  I ran across this problem on &lt;a href="http://www.coderbyte.com/CodingArea/Editor.php?ct=Bracket%20Matcher&amp;amp;lan=JavaScript"&gt;Coderbyte&lt;/a&gt; and it seems like a perfect candidate for application of this concept.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;em&gt;Using the JavaScript language,&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;</description><link>http://localhost:2368/data-structures-stack/</link><guid isPermaLink="false">e208b9b9-00df-4dee-827c-559e9d7ac1d3</guid><category>JavaScript</category><dc:creator>Todd Levin</dc:creator><pubDate>Fri, 02 Oct 2015 02:20:00 GMT</pubDate><content:encoded>&lt;p&gt;I have been looking into different data structures as I prepare for Hack Reactor and the one I would like to talk about here is a stack.  I ran across this problem on &lt;a href="http://www.coderbyte.com/CodingArea/Editor.php?ct=Bracket%20Matcher&amp;amp;lan=JavaScript"&gt;Coderbyte&lt;/a&gt; and it seems like a perfect candidate for application of this concept.&lt;/p&gt;
