@@ -1,4 +1,51 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Todd Levin</title><description>Things that intrigue me</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Sun, 04 Oct 2015 18:02:40 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>The Night Before Hack Reactor</title><description>&lt;p&gt;It is hard to express the emotions one goes through on the verge of a monumental endeavor such as Hack Reactor.   Hack Reactor is a immersive coding coding bootcamp in San Francisco that takes you from a base knowledge of coding and transforms you into an employable software engineer.   Taking&lt;/p&gt;</description><link>http://localhost:2368/the-night-before-hack-reactor/</link><guid isPermaLink="false">4e400d58-1964-4939-8742-865ad671d586</guid><category>Hack Reactor</category><dc:creator>Todd Levin</dc:creator><pubDate>Sun, 04 Oct 2015 18:00:24 GMT</pubDate><content:encoded>&lt;p&gt;It is hard to express the emotions one goes through on the verge of a monumental endeavor such as Hack Reactor.   Hack Reactor is a immersive coding coding bootcamp in San Francisco that takes you from a base knowledge of coding and transforms you into an employable software engineer.   Taking a 4 year computer science degree and condensing it to 3 months.&lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Todd Levin</title><description>Things that intrigue me</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Mon, 05 Oct 2015 06:18:51 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Twas the Night Before Hack Reactor</title><description>&lt;p&gt;Ok, lets be a little less serious now.  In the spirit of "A visit from Saint Nicholas" by Clement Clark Moore, I present 'Twas the Night Before Hack Reactor'.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Twas the night before Hack Reactor, when all through the slack. &lt;br&gt;
+  Not a cohort was sleeping, still working on the jQuery&lt;/p&gt;&lt;/blockquote&gt;</description><link>http://localhost:2368/twas-the-night-before-hack-reactor/</link><guid isPermaLink="false">3706aa9c-17dd-4095-b0a1-1edb27e80882</guid><category>Hack Reactor</category><category>Funny</category><dc:creator>Todd Levin</dc:creator><pubDate>Mon, 05 Oct 2015 06:08:00 GMT</pubDate><content:encoded>&lt;p&gt;Ok, lets be a little less serious now.  In the spirit of "A visit from Saint Nicholas" by Clement Clark Moore, I present 'Twas the Night Before Hack Reactor'.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Twas the night before Hack Reactor, when all through the slack. &lt;br&gt;
+  Not a cohort was sleeping, still working on the jQuery track, &lt;br&gt;
+  The energy bars were gathered with care, &lt;br&gt;
+  In the hopes of not falling asleep there; &lt;br&gt;
+  The cohort were nestled all snug with their laptops in their beds, &lt;br&gt;
+  While visions of software engineering danced in their heads; &lt;br&gt;
+  And me in my plaid and cap, &lt;br&gt;
+  Had just settled in for a nap; &lt;br&gt;
+  When out on the localhost arose such a clatter, &lt;br&gt;
+  I sprang to the logs to see what was the matter; &lt;br&gt;
+  Away to the terminal I flew like a flash, &lt;br&gt;
+  Pored over the errors, typing into the bash; &lt;br&gt;
+  The laptop display and the homebrew theme glow, &lt;br&gt;
+  Gave a lustre of midday to the javaScript objects below, &lt;br&gt;
+  When what to my wondering eyes did appear, &lt;br&gt;
+  But a new direction for my career! &lt;br&gt;
+  With a curriculum so lively and quick, &lt;br&gt;
+  I knew in a moment that Hack Reactor was my pick. &lt;br&gt;
+  More rapid than React did the sprints they came, &lt;br&gt;
+  And they whistled, and shouted and invoked by name: &lt;br&gt;
+  Now &lt;em&gt;Angular&lt;/em&gt;! Now &lt;em&gt;Express&lt;/em&gt;! Now &lt;em&gt;MongoDB&lt;/em&gt; and &lt;em&gt;Node&lt;/em&gt;! &lt;br&gt;
+  On &lt;em&gt;D3&lt;/em&gt;! on, &lt;em&gt;Backbone&lt;/em&gt;! on &lt;em&gt;Algorithms&lt;/em&gt; and &lt;em&gt;Code&lt;/em&gt;! &lt;br&gt;
+  To the top of the stack! code past that wall! &lt;br&gt;
+  Now dash to the lecture! dash to the presentation! dash all! &lt;br&gt;
+  As leaves before the wild hurricane fly, &lt;br&gt;
+  The cohort had to be agile, and spry, &lt;br&gt;
+  So through many lines of code they flew, &lt;br&gt;
+  And their repos full of toys and group projects grew, &lt;br&gt;
+  And then in a twinkling I heard typing from a devotee, &lt;br&gt;
+  The prancing and pawing on each little key, &lt;br&gt;
+  And as I was thinking in my head, and was turning around, &lt;br&gt;
+  Down the lecture hall the instructor came with a bound, &lt;br&gt;
+  He was dressed all in HR swag, from his head to his toe, &lt;br&gt;
+  And the cohort shut their stack overflow, &lt;br&gt;
+  A bundle of toy problems he had flung on his git, &lt;br&gt;
+  and he wouldn’t let any in the cohort quit, &lt;br&gt;
+  His eyes, how they twinkled! his attitude merry! &lt;br&gt;
+  He retold that joke about the iPhone and the Blackberry, &lt;br&gt;
+  He wrapped up a lecture on data structures with a bow, &lt;br&gt;
+  Imparting upon us all that we would need to know&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title>The Night Before Hack Reactor</title><description>&lt;p&gt;It is hard to express the emotions one goes through on the verge of a monumental endeavor such as Hack Reactor.   Hack Reactor is a immersive coding coding bootcamp in San Francisco that takes you from a base knowledge of coding and transforms you into an employable software engineer.   Taking&lt;/p&gt;</description><link>http://localhost:2368/the-night-before-hack-reactor/</link><guid isPermaLink="false">4e400d58-1964-4939-8742-865ad671d586</guid><category>Hack Reactor</category><dc:creator>Todd Levin</dc:creator><pubDate>Sun, 04 Oct 2015 18:00:24 GMT</pubDate><content:encoded>&lt;p&gt;It is hard to express the emotions one goes through on the verge of a monumental endeavor such as Hack Reactor.   Hack Reactor is a immersive coding coding bootcamp in San Francisco that takes you from a base knowledge of coding and transforms you into an employable software engineer.   Taking a 4 year computer science degree and condensing it to 3 months.&lt;/p&gt;
 
 &lt;p&gt;I believe that is how diamonds are made from carbon.   A whole lot of pressure. &lt;/p&gt;
 
