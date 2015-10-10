@@ -1,0 +1,242 @@
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Evaluating Javascript instantiation styles</title>
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Evaluating Javascript instantiation styles">
+        <meta name="twitter:description" content="What does instantiation mean? In object orientated programming when you create an object from a constructor function that passes along shared properties and methods it is called instantiation.  The object that is created is referred to as an instance of its constructor.  Other programming languages refer to the constructor function">
+        <meta name="twitter:creator" content="@toddglevin">
+        <meta name="twitter:image" content="">
+        <meta name="twitter:url" content="http://localhost:2368/evaluating-javascript-instantiation-styles/">
+        <meta name="twitter:domain" content="http://localhost:2368">
+
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
+
+        <link href="../assets/css/main.css?v=6b24bce546" rel="stylesheet">
+        <link rel="shortcut icon" href="http://localhost:2368/favicon.ico">
+
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+        <script src="../assets/js/main.js?v=6b24bce546"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        <link rel="canonical" href="index.html">
+    <meta name="referrer" content="origin">
+    
+    <meta property="og:site_name" content="Todd Levin">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Evaluating Javascript instantiation styles">
+    <meta property="og:description" content="What does instantiation mean? In object orientated programming when you create an object from a constructor function that passes along shared properties and methods it is called instantiation.  The object that is created is referred to as an instance of...">
+    <meta property="og:url" content="http://localhost:2368/evaluating-javascript-instantiation-styles/">
+    <meta property="article:published_time" content="2015-10-10T01:22:50.494Z">
+    <meta property="article:modified_time" content="2015-10-10T06:53:03.140Z">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Evaluating Javascript instantiation styles">
+    <meta name="twitter:description" content="What does instantiation mean? In object orientated programming when you create an object from a constructor function that passes along shared properties and methods it is called instantiation.  The object that is created is referred to as an instance of...">
+    <meta name="twitter:url" content="http://localhost:2368/evaluating-javascript-instantiation-styles/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Todd Levin",
+    "author": {
+        "@type": "Person",
+        "name": "Todd Levin",
+        "url": "http://localhost:2368/author/todd",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "Evaluating Javascript instantiation styles",
+    "url": "http://localhost:2368/evaluating-javascript-instantiation-styles/",
+    "datePublished": "2015-10-10T01:22:50.494Z",
+    "dateModified": "2015-10-10T06:53:03.140Z",
+    "description": "What does instantiation mean? In object orientated programming when you create an object from a constructor function that passes along shared properties and methods it is called instantiation.  The object that is created is referred to as an instance of..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.7">
+    <link rel="alternate" type="application/rss+xml" title="Todd Levin" href="../rss/index.html">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68513712-1', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../">Todd Levin</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../">home</a></li>
+
+                <li><a href="http://github.com/tlevin" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
+                <li><a href="http://twitter.com/toddglevin" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/toddglevin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 centered">
+                        <main>
+    <article class="post">
+            <header>
+                <h1>Evaluating Javascript instantiation styles</h1>
+                <h5>
+                    <time datetime="2015-10-09">10/09/2015</time>
+                </h5>
+            </header>
+
+            <section class="posts">
+                <h3 id="whatdoesinstantiationmean">What does instantiation mean?</h3>
+
+<p>In object orientated programming when you create an object from a constructor function that passes along shared properties and methods it is called instantiation.  The object that is created is referred to as an instance of its constructor.  Other programming languages refer to the constructor function as a class.</p>
+
+<p>Javascript doesn't force the programming into a set process to create a class and instead supports four different styles to achieve this result.</p>
+
+<h3 id="thefourstylestoinstantiateanobject">The four styles to instantiate an object</h3>
+
+<ul>
+<li><strong>functional</strong></li>
+<li><strong>functional with shared methods</strong></li>
+<li><strong>prototypal</strong></li>
+<li><strong>pseudoclassical</strong></li>
+</ul>
+
+<h4 id="whatarewecheckingwhenweevaluateeachstyle">What are we checking when we evaluate each style?</h4>
+
+<p>There are two aspects to evaluate a program (and in this case the act of instantiation).  We look into how long it takes to run (cpu time measured in ms) and how much space it takes in memory (measured in mb).</p>
+
+<h4 id="ourtestingenvironment">Our testing environment</h4>
+
+<p>Let me present our wonderful interface we built to test an implementation of stack and queue constructors. <br>
+<img src="../content/images/2015/10/Screen-Shot-2015-10-09-at-9-52-30-PM.png" alt=""></p>
+
+<p>Great, I know.  The profile script that we ran to create our test does all our work though.</p>
+
+<pre><code>var queues = [];
+var stacks = [];
+$(".createStack").click(function() {
+    stacks = [];
+    while(stacks.length &lt; 100000){
+        stacks.push(Stack());
+        stacks[stacks.length - 1].push(Math.random());
+    }
+});
+$(".createQueue").click(function() {
+    queues = [];
+    while(queues.length &lt; 100000){
+        queues.push(Queue());
+        queues[queues.length - 1].enqueue(Math.random());
+    }
+});
+</code></pre>
+
+<p>We made an array of objects that were instantiated by our chosen style. We called a push method to add to our stack and a enqueue method to add to our queues a random generated number. Adding an operation on top of instantiation would not affect our result, because adding values to it is a constant time and space operation in our implementation.</p>
+
+<h4 id="ourresults">Our results</h4>
+
+<h5 id="timecomplexity">Time complexity</h5>
+
+<p><img src="../content/images/2015/10/Screen-Shot-2015-10-09-at-6-14-45-PM-1.png" alt=""></p>
+
+<p>Ok, first thing you'll notice is functional shared is off the charts.  We determined based on the cpu profiles that we had from this test that the problem was due to the extend function that we used.  An optimized extend would greatly reduce our cpu usage.</p>
+
+<p>Of the tests we ran, pseudoclassical instantiation had a faster run time than the others.  Note that we tested it based on 100,000 instances of stack and queue and our execution times were under 1000 ms for all but functional (not counting functional shared) instantiation.</p>
+
+<h5 id="spacecomplexity">Space Complexity</h5>
+
+<p><img src="../content/images/2015/10/Screen-Shot-2015-10-09-at-6-09-41-PM-1.png" alt=""></p>
+
+<p>We noticed that due to the similar data storage types we used to implement both stack and queue that there was no noticeable difference in the actual memory usage.  This was expected since in effect they are similar data structures, just with different rules governing access.</p>
+
+<p>The reason functional instantiation was close to double the memory usage is because all methods on the object have to be declared in every instance of the object.  This is unlike prototypal and pseudoclassical which use prototype inheritance to pass along the methods, or functional shared which references a shared object of methods.</p>
+
+<h3 id="insummary">In summary</h3>
+
+<p>Depending on the scale of the application, instantiation styles will not make a noticeable difference in its performance.  If optimizing for time, pseudoclassical has an edge and if optimizing for space, I would avoid functional instantiation.</p>
+
+<p>It has an impact on your program, but it will most likely not affect the user's experience.  This makes it far more a personal choice. </p>
+
+<p>Thanks to <a href="https://github.com/bjarkestaun">Bjarke Staun-Olsen</a> for his help on the implementation and testing as well as to the good people at <a href="http://www.hackreactor.com">Hack Reactor</a> for providing the learning environment.</p>
+
+                <hr>
+                <div class="social-buttons">
+                    <a href="https://twitter.com/share?text=Evaluating%20Javascript%20instantiation%20styles" class="popup fa fa-twitter btn btn-info"></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://toddlevin.net/evaluating-javascript-instantiation-styles/" class="popup fa fa-facebook btn btn-primary"></a>
+                    <a href="https://plus.google.com/share?url=http://toddlevin.net/evaluating-javascript-instantiation-styles/" class="popup fa fa-google btn btn-danger"></a>
+                </div>
+            </section>
+
+        <!-- Disqus -->
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+        var disqus_shortname = 'toddglevin';
+        var disqus_identifier = '8';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </article>
+</main>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <footer>
+    <div class="inner">
+         <section class="copyright">All content copyright <a href="../">Todd Levin</a> © 2015 • All rights reserved.</section>
+    </div>
+</footer>
+        </div>
+
+        
+
+        <!--  Analytics-->
+        
+
+        <!-- Disqus -->
+        <script type="text/javascript">
+        var disqus_shortname = 'toddglevin';
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        </script>
+    </body>

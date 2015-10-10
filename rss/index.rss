@@ -1,4 +1,76 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Todd Levin</title><description>Things that intrigue me</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Tue, 06 Oct 2015 20:57:55 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Twas the Night Before Hack Reactor</title><description>&lt;p&gt;Ok, lets be a little less serious now.  In the spirit of "A visit from Saint Nicholas" by Clement Clark Moore, I present 'Twas the Night Before Hack Reactor'.&lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Todd Levin</title><description>Things that intrigue me</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Sat, 10 Oct 2015 07:00:51 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Evaluating Javascript instantiation styles</title><description>&lt;h3 id="whatdoesinstantiationmean"&gt;What does instantiation mean?&lt;/h3&gt;
+
+&lt;p&gt;In object orientated programming when you create an object from a constructor function that passes along shared properties and methods it is called instantiation.  The object that is created is referred to as an instance of its constructor.  Other programming languages refer to the constructor function&lt;/p&gt;</description><link>http://localhost:2368/evaluating-javascript-instantiation-styles/</link><guid isPermaLink="false">7421a3d0-894d-467c-90f0-a2444ca20412</guid><dc:creator>Todd Levin</dc:creator><pubDate>Sat, 10 Oct 2015 01:22:50 GMT</pubDate><content:encoded>&lt;h3 id="whatdoesinstantiationmean"&gt;What does instantiation mean?&lt;/h3&gt;
+
+&lt;p&gt;In object orientated programming when you create an object from a constructor function that passes along shared properties and methods it is called instantiation.  The object that is created is referred to as an instance of its constructor.  Other programming languages refer to the constructor function as a class.&lt;/p&gt;
+
+&lt;p&gt;Javascript doesn't force the programming into a set process to create a class and instead supports four different styles to achieve this result.&lt;/p&gt;
+
+&lt;h3 id="thefourstylestoinstantiateanobject"&gt;The four styles to instantiate an object&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;functional&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;functional with shared methods&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;prototypal&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;pseudoclassical&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="whatarewecheckingwhenweevaluateeachstyle"&gt;What are we checking when we evaluate each style?&lt;/h4&gt;
+
+&lt;p&gt;There are two aspects to evaluate a program (and in this case the act of instantiation).  We look into how long it takes to run (cpu time measured in ms) and how much space it takes in memory (measured in mb).&lt;/p&gt;
+
+&lt;h4 id="ourtestingenvironment"&gt;Our testing environment&lt;/h4&gt;
+
+&lt;p&gt;Let me present our wonderful interface we built to test an implementation of stack and queue constructors. &lt;br&gt;
+&lt;img src="http://localhost:2368/content/images/2015/10/Screen-Shot-2015-10-09-at-9-52-30-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;Great, I know.  The profile script that we ran to create our test does all our work though.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var queues = [];
+var stacks = [];
+$(".createStack").click(function() {
+    stacks = [];
+    while(stacks.length &amp;lt; 100000){
+        stacks.push(Stack());
+        stacks[stacks.length - 1].push(Math.random());
+    }
+});
+$(".createQueue").click(function() {
+    queues = [];
+    while(queues.length &amp;lt; 100000){
+        queues.push(Queue());
+        queues[queues.length - 1].enqueue(Math.random());
+    }
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We made an array of objects that were instantiated by our chosen style. We called a push method to add to our stack and a enqueue method to add to our queues a random generated number. Adding an operation on top of instantiation would not affect our result, because adding values to it is a constant time and space operation in our implementation.&lt;/p&gt;
+
+&lt;h4 id="ourresults"&gt;Our results&lt;/h4&gt;
+
+&lt;h5 id="timecomplexity"&gt;Time complexity&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2015/10/Screen-Shot-2015-10-09-at-6-14-45-PM-1.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;Ok, first thing you'll notice is functional shared is off the charts.  We determined based on the cpu profiles that we had from this test that the problem was due to the extend function that we used.  An optimized extend would greatly reduce our cpu usage.&lt;/p&gt;
+
+&lt;p&gt;Of the tests we ran, pseudoclassical instantiation had a faster run time than the others.  Note that we tested it based on 100,000 instances of stack and queue and our execution times were under 1000 ms for all but functional (not counting functional shared) instantiation.&lt;/p&gt;
+
+&lt;h5 id="spacecomplexity"&gt;Space Complexity&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2015/10/Screen-Shot-2015-10-09-at-6-09-41-PM-1.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;We noticed that due to the similar data storage types we used to implement both stack and queue that there was no noticeable difference in the actual memory usage.  This was expected since in effect they are similar data structures, just with different rules governing access.&lt;/p&gt;
+
+&lt;p&gt;The reason functional instantiation was close to double the memory usage is because all methods on the object have to be declared in every instance of the object.  This is unlike prototypal and pseudoclassical which use prototype inheritance to pass along the methods, or functional shared which references a shared object of methods.&lt;/p&gt;
+
+&lt;h3 id="insummary"&gt;In summary&lt;/h3&gt;
+
+&lt;p&gt;Depending on the scale of the application, instantiation styles will not make a noticeable difference in its performance.  If optimizing for time, pseudoclassical has an edge and if optimizing for space, I would avoid functional instantiation.&lt;/p&gt;
+
+&lt;p&gt;It has an impact on your program, but it will most likely not affect the user's experience.  This makes it far more a personal choice. &lt;/p&gt;
+
+&lt;p&gt;Thanks to &lt;a href="https://github.com/bjarkestaun"&gt;Bjarke Staun-Olsen&lt;/a&gt; for his help on the implementation and testing as well as to the good people at &lt;a href="http://www.hackreactor.com"&gt;Hack Reactor&lt;/a&gt; for providing the learning environment.&lt;/p&gt;</content:encoded></item><item><title>Twas the Night Before Hack Reactor</title><description>&lt;p&gt;Ok, lets be a little less serious now.  In the spirit of "A visit from Saint Nicholas" by Clement Clark Moore, I present 'Twas the Night Before Hack Reactor'.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Twas the night before Hack Reactor, when all through the slack. &lt;br&gt;
