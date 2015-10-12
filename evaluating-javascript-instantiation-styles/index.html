@@ -6,10 +6,10 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Evaluating Javascript instantiation styles</title>
+        <title>Evaluating Performance of Instantiation Patterns</title>
 
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="Evaluating Javascript instantiation styles">
+        <meta name="twitter:title" content="Evaluating Performance of Instantiation Patterns">
         <meta name="twitter:description" content="What does instantiation mean? In object orientated programming when you create an object from a constructor function that passes along shared properties and methods it is called instantiation.  The object that is created is referred to as an instance of its constructor.  Other programming languages refer to the constructor function">
         <meta name="twitter:creator" content="@toddglevin">
         <meta name="twitter:image" content="">
@@ -20,13 +20,13 @@
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
 
-        <link href="../assets/css/main.css?v=6b24bce546" rel="stylesheet">
-        <link rel="shortcut icon" href="http://localhost:2368/favicon.ico">
+        <link href="../assets/css/main.css?v=b5b45cca29" rel="stylesheet">
+        <link rel="shortcut icon" href="../favicon.ico">
 
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-        <script src="../assets/js/main.js?v=6b24bce546"></script>
+        <script src="../assets/js/main.js?v=b5b45cca29"></script>
         <script>hljs.initHighlightingOnLoad();</script>
 
         <link rel="canonical" href="index.html">
@@ -34,16 +34,18 @@
     
     <meta property="og:site_name" content="Todd Levin">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Evaluating Javascript instantiation styles">
+    <meta property="og:title" content="Evaluating Performance of Instantiation Patterns">
     <meta property="og:description" content="What does instantiation mean? In object orientated programming when you create an object from a constructor function that passes along shared properties and methods it is called instantiation.  The object that is created is referred to as an instance of...">
     <meta property="og:url" content="http://localhost:2368/evaluating-javascript-instantiation-styles/">
+    <meta property="og:image" content="http://localhost:2368/content/images/2015/10/IMG_0151.jpg">
     <meta property="article:published_time" content="2015-10-10T01:22:50.494Z">
-    <meta property="article:modified_time" content="2015-10-10T06:53:03.140Z">
+    <meta property="article:modified_time" content="2015-10-12T00:18:02.725Z">
     
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Evaluating Javascript instantiation styles">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Evaluating Performance of Instantiation Patterns">
     <meta name="twitter:description" content="What does instantiation mean? In object orientated programming when you create an object from a constructor function that passes along shared properties and methods it is called instantiation.  The object that is created is referred to as an instance of...">
     <meta name="twitter:url" content="http://localhost:2368/evaluating-javascript-instantiation-styles/">
+    <meta name="twitter:image:src" content="http://localhost:2368/content/images/2015/10/IMG_0151.jpg">
     
     <script type="application/ld+json">
 {
@@ -57,10 +59,11 @@
         "sameAs": null,
         "description": null
     },
-    "headline": "Evaluating Javascript instantiation styles",
+    "headline": "Evaluating Performance of Instantiation Patterns",
     "url": "http://localhost:2368/evaluating-javascript-instantiation-styles/",
     "datePublished": "2015-10-10T01:22:50.494Z",
-    "dateModified": "2015-10-10T06:53:03.140Z",
+    "dateModified": "2015-10-12T00:18:02.725Z",
+    "image": "http://localhost:2368/content/images/2015/10/IMG_0151.jpg",
     "description": "What does instantiation mean? In object orientated programming when you create an object from a constructor function that passes along shared properties and methods it is called instantiation.  The object that is created is referred to as an instance of..."
 }
     </script>
@@ -108,7 +111,7 @@
                         <main>
     <article class="post">
             <header>
-                <h1>Evaluating Javascript instantiation styles</h1>
+                <h1>Evaluating Performance of Instantiation Patterns</h1>
                 <h5>
                     <time datetime="2015-10-09">10/09/2015</time>
                 </h5>
@@ -119,9 +122,9 @@
 
 <p>In object orientated programming when you create an object from a constructor function that passes along shared properties and methods it is called instantiation.  The object that is created is referred to as an instance of its constructor.  Other programming languages refer to the constructor function as a class.</p>
 
-<p>Javascript doesn't force the programming into a set process to create a class and instead supports four different styles to achieve this result.</p>
+<p>Javascript doesn't force the programming into a set process to create a class and instead supports four different instantiation patterns to achieve this result.</p>
 
-<h3 id="thefourstylestoinstantiateanobject">The four styles to instantiate an object</h3>
+<h3 id="thefourpatternstoinstantiateanobject">The four patterns to instantiate an object</h3>
 
 <ul>
 <li><strong>functional</strong></li>
@@ -130,16 +133,23 @@
 <li><strong>pseudoclassical</strong></li>
 </ul>
 
-<h4 id="whatarewecheckingwhenweevaluateeachstyle">What are we checking when we evaluate each style?</h4>
+<hr>
 
-<p>There are two aspects to evaluate a program (and in this case the act of instantiation).  We look into how long it takes to run (cpu time measured in ms) and how much space it takes in memory (measured in mb).</p>
+<h4 id="whatarewecheckingwhenweevaluateeachpattern">What are we checking when we evaluate each pattern?</h4>
 
-<h4 id="ourtestingenvironment">Our testing environment</h4>
+<p>There are two aspects to evaluate a program (and in this case the act of instantiation).  I used Chrome devtools to collect a CPU profile which records the time in miliseconds that a specific function takes.  A heap snapsot looks at the memory allocation of each object created on the page measured in megabytes.  For more information about performance testing using Chrome, check out <a href="https://developers.google.com/web/tools/profile-performance/rendering-tools/js-execution">Speed Up JavaScript Execution</a>.</p>
 
-<p>Let me present our wonderful interface we built to test an implementation of stack and queue constructors. <br>
-<img src="../content/images/2015/10/Screen-Shot-2015-10-09-at-9-52-30-PM.png" alt=""></p>
+<p>Performance of an application is measured in both time or space and often you have to choose which to optimize for.  Learning how the devtools profiler records performance was valuable to understanding how design choices affects the runtime.  </p>
 
-<p>Great, I know.  The profile script that we ran to create our test does all our work though.</p>
+<hr>
+
+<h4 id="thetestingenvironment">The testing environment</h4>
+
+<p>Let me present the wonderful interface that I built to test an implementation of stack and queue constructors.</p>
+
+<p><img src="../content/images/2015/10/Screen-Shot-2015-10-09-at-9-52-30-PM.png" alt=""></p>
+
+<p>Great, I know.  The JavaScript that was running to create the tests does all of the work behind the scenes.</p>
 
 <pre><code>var queues = [];
 var stacks = [];
@@ -159,37 +169,57 @@ $(".createQueue").click(function() {
 });
 </code></pre>
 
-<p>We made an array of objects that were instantiated by our chosen style. We called a push method to add to our stack and a enqueue method to add to our queues a random generated number. Adding an operation on top of instantiation would not affect our result, because adding values to it is a constant time and space operation in our implementation.</p>
+<p>It made an array of objects that were instantiated by the pattern being tested. It then called a push method to add to each stack and an enqueue method to add to each queue a random generated number. </p>
 
-<h4 id="ourresults">Our results</h4>
+<p>Adding an operation on top of instantiation would not affect the result, because adding values to it is a constant time and space operation in this implementation.  The additional jQuery operations were all identical for each test so they can be considered a constant as well.</p>
 
-<h5 id="timecomplexity">Time complexity</h5>
+<hr>
+
+<h2 id="theresults">The Results</h2>
+
+<h5 id="cputime">CPU time</h5>
 
 <p><img src="../content/images/2015/10/Screen-Shot-2015-10-09-at-6-14-45-PM-1.png" alt=""></p>
 
-<p>Ok, first thing you'll notice is functional shared is off the charts.  We determined based on the cpu profiles that we had from this test that the problem was due to the extend function that we used.  An optimized extend would greatly reduce our cpu usage.</p>
+<p>Ok, first thing you'll notice is functional shared is off the charts.  I determined that based on the cpu profiles that each test had generated the problem was due to the extend function that I used for this pattern.  There was some flaw in how the _.extend from the underscore library was reporting in the CPU profiles I collected.</p>
 
-<p>Of the tests we ran, pseudoclassical instantiation had a faster run time than the others.  Note that we tested it based on 100,000 instances of stack and queue and our execution times were under 1000 ms for all but functional (not counting functional shared) instantiation.</p>
+<p>Of the tests that were ran, pseudoclassical instantiation had a faster run time than the others.  Note that the test script tested it based on 100,000 instances of stack and queue and the execution times were under 1200 ms for all patterns of instantiation.</p>
 
-<h5 id="spacecomplexity">Space Complexity</h5>
+<hr>
+
+<h5 id="memoryusage">Memory usage</h5>
 
 <p><img src="../content/images/2015/10/Screen-Shot-2015-10-09-at-6-09-41-PM-1.png" alt=""></p>
 
-<p>We noticed that due to the similar data storage types we used to implement both stack and queue that there was no noticeable difference in the actual memory usage.  This was expected since in effect they are similar data structures, just with different rules governing access.</p>
+<p>I noticed that due to the similar data storage type used to implement both stack and queue that there was no noticeable difference in the actual memory usage.  This was expected since they are similar data structures, just with different rules and methods governing access.</p>
 
-<p>The reason functional instantiation was close to double the memory usage is because all methods on the object have to be declared in every instance of the object.  This is unlike prototypal and pseudoclassical which use prototype inheritance to pass along the methods, or functional shared which references a shared object of methods.</p>
+<p>The reason functional instantiation was close to double the memory usage is because all methods on the constructor have to be declared in every instance it generates.  This is unlike prototypal and pseudoclassical which use prototype inheritance to pass along the methods, or functional shared which references a shared object of methods.</p>
+
+<hr>
+
+<h4 id="resultstake2">Results (take 2!)</h4>
+
+<p>Not satisfied with flawed data I found out about alternative testing tools to simplify the performance tests.  Not that I didn't enjoy the process of generating my own HTML tester and profile scripts, but it isn't efficient.  Efficiency is the whole idea for this post!</p>
+
+<p>I tried out the site <a href="http://jsperf.com">jsperf.com</a> and found that testing was easy to setup, and the interface was simple.  Here is my <a href="http://jsperf.com/instantiationjs">test setup</a> and the results were in line with my own testing.  I fixed the extend for functional shared and it now performs in line with expectations.</p>
+
+<p><img src="../content/images/2015/10/Screen-Shot-2015-10-11-at-3-07-36-PM-1.png" alt=""></p>
+
+<p>My takeaway from running this second test was the act of testing itself.  I learned valuable lessons about the concept of using various tools to get a good snapshot of how your implementation performs.</p>
+
+<p>Functional instantiation performed poorly here and I thought this was an outlier similar to the error with functional shared in my initial testing.  I checked with other sources that did similar testing and found it to be close to what they surmised.  <a href="http://www.shanemkeller.com/instantiation_patterns_and_execution_speed-2/">Source</a></p>
 
 <h3 id="insummary">In summary</h3>
 
-<p>Depending on the scale of the application, instantiation styles will not make a noticeable difference in its performance.  If optimizing for time, pseudoclassical has an edge and if optimizing for space, I would avoid functional instantiation.</p>
+<p>Depending on the scale of the application, and the complexity of the constructor, instantiation patterns will not make a noticeable difference in its performance.  Despite the difference of 40-50%, the slowest pattern instantiates at hundreds of thousands of objects a second in my tests. If optimizing for time, pseudoclassical has an edge and if optimizing for space, I would avoid functional instantiation.</p>
 
-<p>It has an impact on your program, but it will most likely not affect the user's experience.  This makes it far more a personal choice. </p>
+<p>It has an impact on your program, but it will most likely not affect the user's experience.  This makes it far more a personal choice.  On a personal note, I like the pseudoclassical pattern better, and I am even working on remembering to use the keyword <code>new</code> in my code!</p>
 
 <p>Thanks to <a href="https://github.com/bjarkestaun">Bjarke Staun-Olsen</a> for his help on the implementation and testing as well as to the good people at <a href="http://www.hackreactor.com">Hack Reactor</a> for providing the learning environment.</p>
 
                 <hr>
                 <div class="social-buttons">
-                    <a href="https://twitter.com/share?text=Evaluating%20Javascript%20instantiation%20styles" class="popup fa fa-twitter btn btn-info"></a>
+                    <a href="https://twitter.com/share?text=Evaluating%20Performance%20of%20Instantiation%20Patterns" class="popup fa fa-twitter btn btn-info"></a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=http://toddlevin.net/evaluating-javascript-instantiation-styles/" class="popup fa fa-facebook btn btn-primary"></a>
                     <a href="https://plus.google.com/share?url=http://toddlevin.net/evaluating-javascript-instantiation-styles/" class="popup fa fa-google btn btn-danger"></a>
                 </div>
