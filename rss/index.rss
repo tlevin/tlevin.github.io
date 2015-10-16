@@ -1,36 +1,35 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Todd Levin</title><description>Things that intrigue me</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Fri, 16 Oct 2015 04:35:01 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Learning subclasses with HR-rogger</title><description>&lt;p&gt;I had the pleasure of diving deep into subclass pseudoclassical instantiation patterns with a project to build a simple interactive stage to move objects around on.&lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Todd Levin</title><description>Things that intrigue me</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Fri, 16 Oct 2015 05:53:52 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Learning subclasses with HR-ogger</title><description>&lt;p&gt;I had the pleasure of diving deep into the subclass pseudoclassical instantiation pattern with a project to build a simple interactive stage to move objects around on.&lt;/p&gt;
 
-&lt;p&gt;So, what did I do?  I turned it into a Frogger game.  I created a base class called &lt;code&gt;Obstacle&lt;/code&gt; and had &lt;code&gt;Vehicles&lt;/code&gt;, &lt;code&gt;Frogger&lt;/code&gt;, and&lt;/p&gt;</description><link>http://localhost:2368/learning-subclasses-with-frogger/</link><guid isPermaLink="false">0a23ac42-3059-4e18-b4a8-554ce3890986</guid><dc:creator>Todd Levin</dc:creator><pubDate>Fri, 16 Oct 2015 04:31:50 GMT</pubDate><content:encoded>&lt;p&gt;I had the pleasure of diving deep into subclass pseudoclassical instantiation patterns with a project to build a simple interactive stage to move objects around on.&lt;/p&gt;
+&lt;p&gt;So, what did I do?  I turned it into a Frogger game.  I created a base class called &lt;code&gt;Obstacle&lt;/code&gt; and had &lt;code&gt;Vehicles&lt;/code&gt;, &lt;code&gt;Frogger&lt;/code&gt;&lt;/p&gt;</description><link>http://localhost:2368/learning-subclasses-with-frogger/</link><guid isPermaLink="false">0a23ac42-3059-4e18-b4a8-554ce3890986</guid><dc:creator>Todd Levin</dc:creator><pubDate>Fri, 16 Oct 2015 04:31:50 GMT</pubDate><content:encoded>&lt;p&gt;I had the pleasure of diving deep into the subclass pseudoclassical instantiation pattern with a project to build a simple interactive stage to move objects around on.&lt;/p&gt;
 
 &lt;p&gt;So, what did I do?  I turned it into a Frogger game.  I created a base class called &lt;code&gt;Obstacle&lt;/code&gt; and had &lt;code&gt;Vehicles&lt;/code&gt;, &lt;code&gt;Frogger&lt;/code&gt;, and &lt;code&gt;RockObstacle&lt;/code&gt; as subclasses which inherited some basic methods and properties.&lt;/p&gt;
 
 &lt;p&gt;The basic formula for creating a subclass in the pseudoclassical pattern is to: &lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Call the parent class, set the &lt;code&gt;this&lt;/code&gt; context and pass in any parameters that are taken into the subclass that are referenced by inherited properties.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Create a delegation from the subclass prototype to the parent class prototype using Object.create&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Point the subclass prototype constructor back to itself to maintain a relationship between instances and the subclass&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Call the parent class, set the context with the keyword  &lt;code&gt;this&lt;/code&gt; and pass in any parameters that are taken into the subclass that are referenced by inherited properties.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Create a delegation relationship between the subclass prototype and the parent class prototype using Object.create()&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Point the subclass prototype constructor back to itself to maintain a proper relationship between instances and the subclass&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;This is how it looks in code: &lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var Frogger = function(top, left) {
-  Obstacle.call(this, top, left);
-  this.$obstacleNode.addClass('frogger');
-  this.left = left;
-  this.top = top;
-  this.isAlive = true;
-  this.hasWon = false;
-  this.canStart = false;
+&lt;pre&gt;&lt;code&gt;var SubClass = function(param1, param2) {
+
+   //call superclass, apply context and pass parameters if needed
+  SuperClass.call(this, param1, param2);
 };
 
-Frogger.prototype = Object.create(Obstacle.prototype);
-Frogger.prototype.constructor = Frogger;
+//Set the subclass prototype and form a delegation relationship
+SubClass.prototype = Object.create(SuperClass.prototype);
+
+//Point the constructor back at subclass
+SubClass.prototype.constructor = SubClass;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Subclassing makes it easier to create distinct classes that share similar properties and methods.  It helped me abstract what the relationship between components in my project.  It was my first foray into application design where I had to plan out inheritance prior to starting to actually code.&lt;/p&gt;
+&lt;p&gt;Subclassing makes it easier to create distinct classes that share similar properties and methods.  It helped me abstract the relationships between components in my project.  It was my first foray into application design where I had to plan out inheritance and delegation prior to starting to actually code.&lt;/p&gt;
 
-&lt;p&gt;This project introduced me to using audio in HTML5, CSS animations, and the complexities of building applications from idea to implementation.  The challenge to make a viable product in only two days pushed me to learn jQuery, implement object collision and deal with the challenges of CSS.&lt;/p&gt;
+&lt;p&gt;This project introduced me to using audio in HTML5, CSS animations, and the complexities of building applications from idea to implementation.  The challenge to make a viable product in only two days pushed me to learn more jQuery, implement object collision and deal with the perpetual challenges of CSS.&lt;/p&gt;
 
 &lt;p&gt;You can download and play my game on my &lt;a href="https://github.com/tlevin/frogger-game"&gt;github&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title>Evaluating Performance of Instantiation Patterns</title><description>&lt;h3 id="whatdoesinstantiationmean"&gt;What does instantiation mean?&lt;/h3&gt;
 
