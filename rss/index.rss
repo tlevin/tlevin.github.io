@@ -1,4 +1,40 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Todd Levin</title><description>Things that intrigue me</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Fri, 16 Oct 2015 05:53:52 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Learning subclasses with HR-ogger</title><description>&lt;p&gt;I had the pleasure of diving deep into the subclass pseudoclassical instantiation pattern with a project to build a simple interactive stage to move objects around on.&lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Todd Levin</title><description>Things that intrigue me</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Mon, 26 Oct 2015 14:40:16 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Getting started with CoffeScript</title><description>&lt;p&gt;Everyone needs a little coffee to get going in the morning, but what is CoffeeScript?  CoffeeScript is a programming language built off the principles of JavaScript with a heavy syntax influence from Ruby.&lt;/p&gt;
+
+&lt;p&gt;The goal of CoffeeScript is to make machine readable code that is also human readable.  This helps&lt;/p&gt;</description><link>http://localhost:2368/getting-started-with-coffescript/</link><guid isPermaLink="false">93837e66-acc2-470d-84e2-cb2334b0b5e0</guid><dc:creator>Todd Levin</dc:creator><pubDate>Mon, 26 Oct 2015 14:38:41 GMT</pubDate><content:encoded>&lt;p&gt;Everyone needs a little coffee to get going in the morning, but what is CoffeeScript?  CoffeeScript is a programming language built off the principles of JavaScript with a heavy syntax influence from Ruby.&lt;/p&gt;
+
+&lt;p&gt;The goal of CoffeeScript is to make machine readable code that is also human readable.  This helps a lot in software engineering since often times you are not working on your own code, and even if you are, you may have written it months ago.  What if you could read your code like a book?  CoffeeScript aims to be as close to that as possible.&lt;/p&gt;
+
+&lt;p&gt;Ready to write some CoffeeScript?  Hold on there sparky, you are going to need a few things first and you need to know something about the language as well.  CoffeeScript is a compiled language meaning that before the browser can run your awesome new app, you need to convert it to JavaScript.  Sounds like hard work, but fear not, CoffeeScript has that covered.&lt;/p&gt;
+
+&lt;h2 id="gettingstarted"&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;In order to compile your code after you write it in CoffeeScript you need to instal CoffeeScript.  If you haven't already installed Node on your machine, please checkout the post &lt;a href="http://www.codydaig.me/installing-node-with-nvm/"&gt;here&lt;/a&gt; on installing Node using NVM.&lt;/p&gt;
+
+&lt;p&gt;The next step I would suggest is get syntax highlighting for CoffeeScript for your favorite text editor.  I use Sublime so for me I found my syntax highlighter through &lt;a href="https://packagecontrol.io/"&gt;Sublime Package Control&lt;/a&gt;.  If you don't have that I would highly suggest it because it makes installing plugins for Sublime painless.  The CoffeeScript syntax highlighter I use is called &lt;a href="https://github.com/aponxi/sublime-better-coffeescript"&gt;Better CoffeeScript&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="compileasyougo"&gt;Compile as you go&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;coffee --output compiled --map --watch --compile ./
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Got your attention, now didn't I?  Running this command in the root of your project will make all the CoffeeScript magic happen.  Let's take a look at what each of these commands actually mean. &lt;code&gt;coffee&lt;/code&gt; is the keyword for &lt;code&gt;coffee-script&lt;/code&gt; and everything after it is your command options. &lt;code&gt;--output&lt;/code&gt; or &lt;code&gt;-o&lt;/code&gt; for short tells CoffeeScript to write all of the compiled JavaScript to the provided folder name.  In this case it is 'compiled'.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;--map&lt;/code&gt; or &lt;code&gt;-m&lt;/code&gt; provides source code mapping from CoffeeScript to JavaScript and back again.  Clicking on a line of compiled JavaScript in your devtools will select the corresponding line in your CoffeeScript.  Very nice for matching uncaught exceptions to their original lines.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;--watch&lt;/code&gt; or &lt;code&gt;--w&lt;/code&gt; is your watch option, this means that it will watch the provided file or folder and any changes to it will be immediately compiled.  This combined with &lt;a href="https://github.com/tapio/live-server"&gt;live-server&lt;/a&gt; and you can have dynamically updated webpages during development with CoffeeScript.  &lt;code&gt;./&lt;/code&gt; simply selects the root and all subfolders in your project.  Kind of the shotgun approach but if you are dealing with multiple .coffee files in your project, you will like that option.&lt;/p&gt;
+
+&lt;h2 id="syntaxdifferences"&gt;Syntax differences&lt;/h2&gt;
+
+&lt;p&gt;I won't go into the details of how CoffeeScript is different from JavaScript other than to show you this graphic I shamelessly took from &lt;a href="http://coffeescript.org"&gt;CoffeeScript.org&lt;/a&gt;. This is a quick side by side comparison with several of the more common JavaScript concepts.  On the left is CoffeeScript, on the right is the corresponding JavaScript. &lt;br&gt;
+&lt;img src="http://localhost:2368/content/images/2015/10/Screen-Shot-2015-10-26-at-7-13-10-AM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="thefutureincoffeescript"&gt;The Future in CoffeeScript&lt;/h3&gt;
+
+&lt;p&gt;I personally enjoyed learning CoffeeScript and would consider using it in the future.  I enjoyed the brevity of the code, the simplicity of it's design and the fact that it forces you to be very clear in your intent with the use of whitespace to declare functional blocks.&lt;/p&gt;
+
+&lt;p&gt;Plus if you ever get stuck on what the correct CoffeeScript to use as you are initially learning it, there is always &lt;a href="http://js2.coffee"&gt;JS2.coffee&lt;/a&gt; which is a great site that does a translation from JavaScript to CoffeeScript.  I would not suggest learning CoffeeScript at the expense of learning JavaScript because in the end, CoffeeScript is simply a syntactic overlay on the core of what JavaScript is. &lt;/p&gt;</content:encoded></item><item><title>Learning subclasses with HR-ogger</title><description>&lt;p&gt;I had the pleasure of diving deep into the subclass pseudoclassical instantiation pattern with a project to build a simple interactive stage to move objects around on.&lt;/p&gt;
 
 &lt;p&gt;So, what did I do?  I turned it into a Frogger game.  I created a base class called &lt;code&gt;Obstacle&lt;/code&gt; and had &lt;code&gt;Vehicles&lt;/code&gt;, &lt;code&gt;Frogger&lt;/code&gt;&lt;/p&gt;</description><link>http://localhost:2368/learning-subclasses-with-frogger/</link><guid isPermaLink="false">0a23ac42-3059-4e18-b4a8-554ce3890986</guid><dc:creator>Todd Levin</dc:creator><pubDate>Fri, 16 Oct 2015 04:31:50 GMT</pubDate><content:encoded>&lt;p&gt;I had the pleasure of diving deep into the subclass pseudoclassical instantiation pattern with a project to build a simple interactive stage to move objects around on.&lt;/p&gt;
 

@@ -1,0 +1,206 @@
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Getting started with CoffeScript</title>
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Getting started with CoffeScript">
+        <meta name="twitter:description" content="Everyone needs a little coffee to get going in the morning, but what is CoffeeScript?  CoffeeScript is a programming language built off the principles of JavaScript with a heavy syntax influence from Ruby. The goal of CoffeeScript is to make machine readable code that is also human readable.  This helps">
+        <meta name="twitter:creator" content="@toddglevin">
+        <meta name="twitter:image" content="">
+        <meta name="twitter:url" content="http://localhost:2368/getting-started-with-coffescript/">
+        <meta name="twitter:domain" content="http://localhost:2368">
+
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
+
+        <link href="../assets/css/main.css?v=5442997e92" rel="stylesheet">
+        <link rel="shortcut icon" href="../favicon.ico">
+
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+        <script src="../assets/js/main.js?v=5442997e92"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        <link rel="canonical" href="index.html">
+    <meta name="referrer" content="origin">
+    
+    <meta property="og:site_name" content="Todd Levin">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Getting started with CoffeScript">
+    <meta property="og:description" content="Everyone needs a little coffee to get going in the morning, but what is CoffeeScript?  CoffeeScript is a programming language built off the principles of JavaScript with a heavy syntax influence from Ruby. The goal of CoffeeScript is to make...">
+    <meta property="og:url" content="http://localhost:2368/getting-started-with-coffescript/">
+    <meta property="article:published_time" content="2015-10-26T14:38:41.705Z">
+    <meta property="article:modified_time" content="2015-10-26T14:38:41.703Z">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Getting started with CoffeScript">
+    <meta name="twitter:description" content="Everyone needs a little coffee to get going in the morning, but what is CoffeeScript?  CoffeeScript is a programming language built off the principles of JavaScript with a heavy syntax influence from Ruby. The goal of CoffeeScript is to make...">
+    <meta name="twitter:url" content="http://localhost:2368/getting-started-with-coffescript/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Todd Levin",
+    "author": {
+        "@type": "Person",
+        "name": "Todd Levin",
+        "url": "http://localhost:2368/author/todd",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "Getting started with CoffeScript",
+    "url": "http://localhost:2368/getting-started-with-coffescript/",
+    "datePublished": "2015-10-26T14:38:41.705Z",
+    "dateModified": "2015-10-26T14:38:41.703Z",
+    "description": "Everyone needs a little coffee to get going in the morning, but what is CoffeeScript?  CoffeeScript is a programming language built off the principles of JavaScript with a heavy syntax influence from Ruby. The goal of CoffeeScript is to make..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.7">
+    <link rel="alternate" type="application/rss+xml" title="Todd Levin" href="../rss/index.html">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68513712-1', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../">Todd Levin</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../">home</a></li>
+
+                <li><a href="http://github.com/tlevin" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
+                <li><a href="http://twitter.com/toddglevin" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/toddglevin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 centered">
+                        <main>
+    <article class="post">
+            <header>
+                <h1>Getting started with CoffeScript</h1>
+                <h5>
+                    <time datetime="2015-10-26">10/26/2015</time>
+                </h5>
+            </header>
+
+            <section class="posts">
+                <p>Everyone needs a little coffee to get going in the morning, but what is CoffeeScript?  CoffeeScript is a programming language built off the principles of JavaScript with a heavy syntax influence from Ruby.</p>
+
+<p>The goal of CoffeeScript is to make machine readable code that is also human readable.  This helps a lot in software engineering since often times you are not working on your own code, and even if you are, you may have written it months ago.  What if you could read your code like a book?  CoffeeScript aims to be as close to that as possible.</p>
+
+<p>Ready to write some CoffeeScript?  Hold on there sparky, you are going to need a few things first and you need to know something about the language as well.  CoffeeScript is a compiled language meaning that before the browser can run your awesome new app, you need to convert it to JavaScript.  Sounds like hard work, but fear not, CoffeeScript has that covered.</p>
+
+<h2 id="gettingstarted">Getting Started</h2>
+
+<p>In order to compile your code after you write it in CoffeeScript you need to instal CoffeeScript.  If you haven't already installed Node on your machine, please checkout the post <a href="http://www.codydaig.me/installing-node-with-nvm/">here</a> on installing Node using NVM.</p>
+
+<p>The next step I would suggest is get syntax highlighting for CoffeeScript for your favorite text editor.  I use Sublime so for me I found my syntax highlighter through <a href="https://packagecontrol.io/">Sublime Package Control</a>.  If you don't have that I would highly suggest it because it makes installing plugins for Sublime painless.  The CoffeeScript syntax highlighter I use is called <a href="https://github.com/aponxi/sublime-better-coffeescript">Better CoffeeScript</a></p>
+
+<h2 id="compileasyougo">Compile as you go</h2>
+
+<pre><code>coffee --output compiled --map --watch --compile ./
+</code></pre>
+
+<p>Got your attention, now didn't I?  Running this command in the root of your project will make all the CoffeeScript magic happen.  Let's take a look at what each of these commands actually mean. <code>coffee</code> is the keyword for <code>coffee-script</code> and everything after it is your command options. <code>--output</code> or <code>-o</code> for short tells CoffeeScript to write all of the compiled JavaScript to the provided folder name.  In this case it is 'compiled'.</p>
+
+<p><code>--map</code> or <code>-m</code> provides source code mapping from CoffeeScript to JavaScript and back again.  Clicking on a line of compiled JavaScript in your devtools will select the corresponding line in your CoffeeScript.  Very nice for matching uncaught exceptions to their original lines.</p>
+
+<p><code>--watch</code> or <code>--w</code> is your watch option, this means that it will watch the provided file or folder and any changes to it will be immediately compiled.  This combined with <a href="https://github.com/tapio/live-server">live-server</a> and you can have dynamically updated webpages during development with CoffeeScript.  <code>./</code> simply selects the root and all subfolders in your project.  Kind of the shotgun approach but if you are dealing with multiple .coffee files in your project, you will like that option.</p>
+
+<h2 id="syntaxdifferences">Syntax differences</h2>
+
+<p>I won't go into the details of how CoffeeScript is different from JavaScript other than to show you this graphic I shamelessly took from <a href="http://coffeescript.org">CoffeeScript.org</a>. This is a quick side by side comparison with several of the more common JavaScript concepts.  On the left is CoffeeScript, on the right is the corresponding JavaScript. <br>
+<img src="../content/images/2015/10/Screen-Shot-2015-10-26-at-7-13-10-AM.png" alt=""></p>
+
+<hr>
+
+<h3 id="thefutureincoffeescript">The Future in CoffeeScript</h3>
+
+<p>I personally enjoyed learning CoffeeScript and would consider using it in the future.  I enjoyed the brevity of the code, the simplicity of it's design and the fact that it forces you to be very clear in your intent with the use of whitespace to declare functional blocks.</p>
+
+<p>Plus if you ever get stuck on what the correct CoffeeScript to use as you are initially learning it, there is always <a href="http://js2.coffee">JS2.coffee</a> which is a great site that does a translation from JavaScript to CoffeeScript.  I would not suggest learning CoffeeScript at the expense of learning JavaScript because in the end, CoffeeScript is simply a syntactic overlay on the core of what JavaScript is. </p>
+
+                <hr>
+                <div class="social-buttons">
+                    <a href="https://twitter.com/share?text=Getting%20started%20with%20CoffeScript" class="popup fa fa-twitter btn btn-info"></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://toddlevin.net/getting-started-with-coffescript/" class="popup fa fa-facebook btn btn-primary"></a>
+                    <a href="https://plus.google.com/share?url=http://toddlevin.net/getting-started-with-coffescript/" class="popup fa fa-google btn btn-danger"></a>
+                </div>
+            </section>
+
+        <!-- Disqus -->
+        <div id="disqus_thread"></div>
+
+        <script type="text/javascript">
+        var disqus_shortname = 'toddglevin';
+        var disqus_identifier = '10';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </article>
+</main>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <footer>
+    <div class="inner">
+         <section class="copyright">All content copyright <a href="../">Todd Levin</a> © 2015 • All rights reserved.</section>
+    </div>
+</footer>
+        </div>
+
+        
+
+        <!--  Analytics-->
+        
+
+        <!-- Disqus -->
+        <script type="text/javascript">
+        var disqus_shortname = 'toddglevin';
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        </script>
+    </body>
