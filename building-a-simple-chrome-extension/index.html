@@ -6,14 +6,14 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Data structures: stack in practice</title>
+        <title>Building a simple Chrome Extension</title>
 
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="Data structures: stack in practice">
-        <meta name="twitter:description" content="I have been looking into different data structures as I prepare for Hack Reactor and the one I would like to talk about here is a stack.  I ran across this problem on Coderbyte and it seems like a perfect candidate for application of this concept.   Using the JavaScript language,">
+        <meta name="twitter:title" content="Building a simple Chrome Extension">
+        <meta name="twitter:description" content="I was recently able to make a chrome extension as a personal project and I was surprised at the ease of making something work.  I wanted to share what I found to be true and where to start. Easymode: Yo If you are unfamiliar with a Yeoman generator, it is">
         <meta name="twitter:creator" content="@toddglevin">
         <meta name="twitter:image" content="">
-        <meta name="twitter:url" content="http://localhost:2368/data-structures-stack/">
+        <meta name="twitter:url" content="http://localhost:2368/building-a-simple-chrome-extension/">
         <meta name="twitter:domain" content="http://localhost:2368">
 
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
@@ -34,17 +34,16 @@
     
     <meta property="og:site_name" content="Todd Levin">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Data structures: stack in practice">
-    <meta property="og:description" content="I have been looking into different data structures as I prepare for Hack Reactor and the one I would like to talk about here is a stack.  I ran across this problem on Coderbyte and it seems like a perfect...">
-    <meta property="og:url" content="http://localhost:2368/data-structures-stack/">
-    <meta property="article:published_time" content="2015-10-02T02:20:00.000Z">
-    <meta property="article:modified_time" content="2015-10-02T07:54:30.606Z">
-    <meta property="article:tag" content="JavaScript">
+    <meta property="og:title" content="Building a simple Chrome Extension">
+    <meta property="og:description" content="I was recently able to make a chrome extension as a personal project and I was surprised at the ease of making something work.  I wanted to share what I found to be true and where to start. Easymode: Yo...">
+    <meta property="og:url" content="http://localhost:2368/building-a-simple-chrome-extension/">
+    <meta property="article:published_time" content="2015-11-13T22:13:51.892Z">
+    <meta property="article:modified_time" content="2015-11-13T22:13:51.892Z">
     
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Data structures: stack in practice">
-    <meta name="twitter:description" content="I have been looking into different data structures as I prepare for Hack Reactor and the one I would like to talk about here is a stack.  I ran across this problem on Coderbyte and it seems like a perfect...">
-    <meta name="twitter:url" content="http://localhost:2368/data-structures-stack/">
+    <meta name="twitter:title" content="Building a simple Chrome Extension">
+    <meta name="twitter:description" content="I was recently able to make a chrome extension as a personal project and I was surprised at the ease of making something work.  I wanted to share what I found to be true and where to start. Easymode: Yo...">
+    <meta name="twitter:url" content="http://localhost:2368/building-a-simple-chrome-extension/">
     
     <script type="application/ld+json">
 {
@@ -58,12 +57,11 @@
         "sameAs": null,
         "description": null
     },
-    "headline": "Data structures: stack in practice",
-    "url": "http://localhost:2368/data-structures-stack/",
-    "datePublished": "2015-10-02T02:20:00.000Z",
-    "dateModified": "2015-10-02T07:54:30.606Z",
-    "keywords": "JavaScript",
-    "description": "I have been looking into different data structures as I prepare for Hack Reactor and the one I would like to talk about here is a stack.  I ran across this problem on Coderbyte and it seems like a perfect..."
+    "headline": "Building a simple Chrome Extension",
+    "url": "http://localhost:2368/building-a-simple-chrome-extension/",
+    "datePublished": "2015-11-13T22:13:51.892Z",
+    "dateModified": "2015-11-13T22:13:51.892Z",
+    "description": "I was recently able to make a chrome extension as a personal project and I was surprised at the ease of making something work.  I wanted to share what I found to be true and where to start. Easymode: Yo..."
 }
     </script>
 
@@ -108,59 +106,50 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 centered">
                         <main>
-    <article class="post tag-javascript">
+    <article class="post">
             <header>
-                <h1>Data structures: stack in practice</h1>
+                <h1>Building a simple Chrome Extension</h1>
                 <h5>
-                    <time datetime="2015-10-01">10/01/2015</time>
+                    <time datetime="2015-11-13">11/13/2015</time>
                 </h5>
-                    <span class="label label-primary"><a href="../tag/javascript/"><i class="fa fa-tag"></i> JavaScript</a></span>
             </header>
 
             <section class="posts">
-                <p>I have been looking into different data structures as I prepare for Hack Reactor and the one I would like to talk about here is a stack.  I ran across this problem on <a href="http://www.coderbyte.com/CodingArea/Editor.php?ct=Bracket%20Matcher&amp;lan=JavaScript">Coderbyte</a> and it seems like a perfect candidate for application of this concept.</p>
+                <p>I was recently able to make a chrome extension as a personal project and I was surprised at the ease of making something work.  I wanted to share what I found to be true and where to start.</p>
 
-<blockquote>
-  <p><em>Using the JavaScript language, have the function BracketMatcher(str) take the str parameter being passed and return 1 if the brackets are correctly matched and each one is accounted for. Otherwise return 0. For example: if str is "(hello (world))", then the output should be 1, but if str is "((hello (world))" the the output should be 0 because the brackets do not correctly match up. Only "(" and ")" will be used as brackets. If str contains no brackets return 1.</em></p>
-</blockquote>
+<h2 id="easymodeyo">Easymode: Yo</h2>
 
-<h4 id="whatisastack">What is a stack?</h4>
+<p>If you are unfamiliar with a Yeoman generator, it is a tool to build out a basic scaffold for a project.  It allows a developer to bypass the tedious chores of making folder structures, the ability to inject dependencies and even to have automated testing out of the box.</p>
 
-<p>Think of a stack as a can of Pringles, you can add chips and remove chips from only one side. A stack is a basic linear data structure where the last value added in is the first value out.  It often is implemented as an array or a linked list since a stack only needs very basic methods to control access such as <code>pop()</code> to remove a value and <code>push()</code> to add a value.  The best way to examine it further is to see it in action.</p>
+<p>I found a great generator for chrome extensions called simply <a href="https://github.com/yeoman/generator-chrome-extension">generator-chrome-extension</a>.  It installs dependencies for the program with a simple <code>npm install -g generator-chrome-extension</code>.</p>
 
-<h4 id="bracketmatcher">BracketMatcher</h4>
+<p>Next make and enter a folder for your project and run <code>yo chrome-extension</code> and watch the magic.  It will walk you through general setup and then give you a simple scaffold to build your extension with.</p>
 
-<p>Let's examine what the problem asks for and why a stack is the appropriate data structure for the job.  The issue with balancing brackets is in order to properly implement, we need to keep track of them as they go since an open bracket <code>(</code> is not always going to be followed by it's pair in the case of nested brackets as seen in the example <code>(hello (world))</code>.</p>
+<h3 id="whatisrequiredforachromeextension">What is required for a Chrome Extension?</h3>
 
-<p>Here is where a stack is good.  Each <code>(</code> it comes across will be added to the top and is removed only when a <code>)</code> is encountered.  A balanced string will have an empty stack at the end of it.  Let's see my solution to the problem.</p>
+<p>So you want to do it the hard way?</p>
 
-<pre><code>function BracketMatcher(str){
-  var stack = [];
-  for(var i = 0; i &lt; str.length; i++){
-    if(str[i] === '('){
-      stack.push(str[i]);
-   } else if ( str[i] === ')'){
-     if(stack[stack.length-1] === '('){
-       stack.pop();
-     } else {
-       return 0;
-     }
-   }
- }
- if( stack.length === 0 ){
-   return 1;
- }
- return 0;
-}
-</code></pre>
+<p>Good!  Let's look into what is needed for a basic chrome extension to work.</p>
 
-<p>We initialize a stack in the form of an array and iterate across the string.  As it goes it will add and remove <code>(</code>'s from the stack.  If all goes well we will have a balanced string indicated by an empty stack after the iteration.  If so, we have our return value of 1.</p>
+<p>All you need for a chrome extension is a manifest.json file where you define description, icons, permissions as well as what type of Chrome Extension you are building.  I chose to use a popup and there is good <a href="https://developer.chrome.com/extensions">documentation here</a> on how to build your manifest.json file.</p>
+
+<p>After you declare your extension and permissions, you just need to develop the extension.  Guess what?  A Chrome extension popup is simply a html page so you can use any front-end technology to build a responsive, feature rich document.  I personally used angular for my front-end on this project and it came out pretty well.</p>
+
+<p>If all goes well you can load your extension into chrome as described in the <a href="https://developer.chrome.com/extensions/getstarted">getting started docs.</a></p>
+
+<h4 id="wherecanigetmoreinformation">Where can I get more information?</h4>
+
+<p><a href="https://developer.chrome.com/extensions">Chrome developer documentation on extensions</a> </p>
+
+<p><a href="https://css-tricks.com/colorpeek-part-2-building-first-chrome-extension/">Basic tutorial on building an extension</a></p>
+
+<p><a href="https://www.youtube.com/playlist?list=PLCA101D6A85FE9D4B">Chrome development videos from engineers at Google</a></p>
 
                 <hr>
                 <div class="social-buttons">
-                    <a href="https://twitter.com/share?text=Data%20structures:%20stack%20in%20practice" class="popup fa fa-twitter btn btn-info"></a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://toddlevin.net/data-structures-stack/" class="popup fa fa-facebook btn btn-primary"></a>
-                    <a href="https://plus.google.com/share?url=http://toddlevin.net/data-structures-stack/" class="popup fa fa-google btn btn-danger"></a>
+                    <a href="https://twitter.com/share?text=Building%20a%20simple%20Chrome%20Extension" class="popup fa fa-twitter btn btn-info"></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://toddlevin.net/building-a-simple-chrome-extension/" class="popup fa fa-facebook btn btn-primary"></a>
+                    <a href="https://plus.google.com/share?url=http://toddlevin.net/building-a-simple-chrome-extension/" class="popup fa fa-google btn btn-danger"></a>
                 </div>
             </section>
 
@@ -169,7 +158,7 @@
 
         <script type="text/javascript">
         var disqus_shortname = 'toddglevin';
-        var disqus_identifier = '5';
+        var disqus_identifier = '11';
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';

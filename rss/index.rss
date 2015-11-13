@@ -1,4 +1,36 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Todd Levin</title><description>Things that intrigue me</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Wed, 28 Oct 2015 16:03:44 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Getting started with CoffeScript</title><description>&lt;p&gt;Everyone needs a little coffee to get going in the morning, but what is CoffeeScript?  CoffeeScript is a programming language built off the principles of JavaScript with a heavy syntax influence from Ruby.&lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Todd Levin</title><description>Things that intrigue me</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Fri, 13 Nov 2015 22:14:21 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Building a simple Chrome Extension</title><description>&lt;p&gt;I was recently able to make a chrome extension as a personal project and I was surprised at the ease of making something work.  I wanted to share what I found to be true and where to start.&lt;/p&gt;
+
+&lt;h2 id="easymodeyo"&gt;Easymode: Yo&lt;/h2&gt;
+
+&lt;p&gt;If you are unfamiliar with a Yeoman generator, it is&lt;/p&gt;</description><link>http://localhost:2368/building-a-simple-chrome-extension/</link><guid isPermaLink="false">e80baa9f-8d89-40ce-8cc1-04eb03701762</guid><dc:creator>Todd Levin</dc:creator><pubDate>Fri, 13 Nov 2015 22:13:51 GMT</pubDate><content:encoded>&lt;p&gt;I was recently able to make a chrome extension as a personal project and I was surprised at the ease of making something work.  I wanted to share what I found to be true and where to start.&lt;/p&gt;
+
+&lt;h2 id="easymodeyo"&gt;Easymode: Yo&lt;/h2&gt;
+
+&lt;p&gt;If you are unfamiliar with a Yeoman generator, it is a tool to build out a basic scaffold for a project.  It allows a developer to bypass the tedious chores of making folder structures, the ability to inject dependencies and even to have automated testing out of the box.&lt;/p&gt;
+
+&lt;p&gt;I found a great generator for chrome extensions called simply &lt;a href="https://github.com/yeoman/generator-chrome-extension"&gt;generator-chrome-extension&lt;/a&gt;.  It installs dependencies for the program with a simple &lt;code&gt;npm install -g generator-chrome-extension&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Next make and enter a folder for your project and run &lt;code&gt;yo chrome-extension&lt;/code&gt; and watch the magic.  It will walk you through general setup and then give you a simple scaffold to build your extension with.&lt;/p&gt;
+
+&lt;h3 id="whatisrequiredforachromeextension"&gt;What is required for a Chrome Extension?&lt;/h3&gt;
+
+&lt;p&gt;So you want to do it the hard way?&lt;/p&gt;
+
+&lt;p&gt;Good!  Let's look into what is needed for a basic chrome extension to work.&lt;/p&gt;
+
+&lt;p&gt;All you need for a chrome extension is a manifest.json file where you define description, icons, permissions as well as what type of Chrome Extension you are building.  I chose to use a popup and there is good &lt;a href="https://developer.chrome.com/extensions"&gt;documentation here&lt;/a&gt; on how to build your manifest.json file.&lt;/p&gt;
+
+&lt;p&gt;After you declare your extension and permissions, you just need to develop the extension.  Guess what?  A Chrome extension popup is simply a html page so you can use any front-end technology to build a responsive, feature rich document.  I personally used angular for my front-end on this project and it came out pretty well.&lt;/p&gt;
+
+&lt;p&gt;If all goes well you can load your extension into chrome as described in the &lt;a href="https://developer.chrome.com/extensions/getstarted"&gt;getting started docs.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id="wherecanigetmoreinformation"&gt;Where can I get more information?&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="https://developer.chrome.com/extensions"&gt;Chrome developer documentation on extensions&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://css-tricks.com/colorpeek-part-2-building-first-chrome-extension/"&gt;Basic tutorial on building an extension&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://www.youtube.com/playlist?list=PLCA101D6A85FE9D4B"&gt;Chrome development videos from engineers at Google&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title>Getting started with CoffeScript</title><description>&lt;p&gt;Everyone needs a little coffee to get going in the morning, but what is CoffeeScript?  CoffeeScript is a programming language built off the principles of JavaScript with a heavy syntax influence from Ruby.&lt;/p&gt;
 
 &lt;p&gt;The goal of CoffeeScript is to make machine readable code that is also human readable.  This helps&lt;/p&gt;</description><link>http://localhost:2368/getting-started-with-coffescript/</link><guid isPermaLink="false">93837e66-acc2-470d-84e2-cb2334b0b5e0</guid><dc:creator>Todd Levin</dc:creator><pubDate>Mon, 26 Oct 2015 14:38:41 GMT</pubDate><content:encoded>&lt;p&gt;Everyone needs a little coffee to get going in the morning, but what is CoffeeScript?  CoffeeScript is a programming language built off the principles of JavaScript with a heavy syntax influence from Ruby.&lt;/p&gt;
 
