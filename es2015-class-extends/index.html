@@ -6,14 +6,14 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Data structures: stack in practice</title>
+        <title>ES2015 Class extends</title>
 
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="Data structures: stack in practice">
-        <meta name="twitter:description" content="I have been looking into different data structures as I prepare for Hack Reactor and the one I would like to talk about here is a stack.  I ran across this problem on Coderbyte and it seems like a perfect candidate for application of this concept.   Using the JavaScript language,">
+        <meta name="twitter:title" content="ES2015 Class extends">
+        <meta name="twitter:description" content="Fun with Fat arrows How I learned to abandon the ; I have started writing and thinking of my apps in the new ES2015 standard and wanted to muse on the construction of a subclass using the class SubClassName extends SuperClass { } structure. Subclassing is standardized Subclassing in ES2015 is great, it">
         <meta name="twitter:creator" content="@toddglevin">
         <meta name="twitter:image" content="">
-        <meta name="twitter:url" content="http://localhost:2368/data-structures-stack/">
+        <meta name="twitter:url" content="http://localhost:2368/es2015-class-extends/">
         <meta name="twitter:domain" content="http://localhost:2368">
 
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
@@ -34,17 +34,16 @@
     
     <meta property="og:site_name" content="Todd Levin">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Data structures: stack in practice">
-    <meta property="og:description" content="I have been looking into different data structures as I prepare for Hack Reactor and the one I would like to talk about here is a stack.  I ran across this problem on Coderbyte and it seems like a perfect...">
-    <meta property="og:url" content="http://localhost:2368/data-structures-stack/">
-    <meta property="article:published_time" content="2015-10-02T02:20:00.000Z">
-    <meta property="article:modified_time" content="2015-10-02T07:54:30.606Z">
-    <meta property="article:tag" content="JavaScript">
+    <meta property="og:title" content="ES2015 Class extends">
+    <meta property="og:description" content="Fun with Fat arrows How I learned to abandon the ; I have started writing and thinking of my apps in the new ES2015 standard and wanted to muse on the construction of a subclass using the class SubClassName extends SuperClass...">
+    <meta property="og:url" content="http://localhost:2368/es2015-class-extends/">
+    <meta property="article:published_time" content="2015-12-08T22:01:25.269Z">
+    <meta property="article:modified_time" content="2015-12-08T22:03:21.520Z">
     
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Data structures: stack in practice">
-    <meta name="twitter:description" content="I have been looking into different data structures as I prepare for Hack Reactor and the one I would like to talk about here is a stack.  I ran across this problem on Coderbyte and it seems like a perfect...">
-    <meta name="twitter:url" content="http://localhost:2368/data-structures-stack/">
+    <meta name="twitter:title" content="ES2015 Class extends">
+    <meta name="twitter:description" content="Fun with Fat arrows How I learned to abandon the ; I have started writing and thinking of my apps in the new ES2015 standard and wanted to muse on the construction of a subclass using the class SubClassName extends SuperClass...">
+    <meta name="twitter:url" content="http://localhost:2368/es2015-class-extends/">
     
     <script type="application/ld+json">
 {
@@ -58,12 +57,11 @@
         "sameAs": null,
         "description": null
     },
-    "headline": "Data structures: stack in practice",
-    "url": "http://localhost:2368/data-structures-stack/",
-    "datePublished": "2015-10-02T02:20:00.000Z",
-    "dateModified": "2015-10-02T07:54:30.606Z",
-    "keywords": "JavaScript",
-    "description": "I have been looking into different data structures as I prepare for Hack Reactor and the one I would like to talk about here is a stack.  I ran across this problem on Coderbyte and it seems like a perfect..."
+    "headline": "ES2015 Class extends",
+    "url": "http://localhost:2368/es2015-class-extends/",
+    "datePublished": "2015-12-08T22:01:25.269Z",
+    "dateModified": "2015-12-08T22:03:21.520Z",
+    "description": "Fun with Fat arrows How I learned to abandon the ; I have started writing and thinking of my apps in the new ES2015 standard and wanted to muse on the construction of a subclass using the class SubClassName extends SuperClass..."
 }
     </script>
 
@@ -108,59 +106,54 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 centered">
                         <main>
-    <article class="post tag-javascript">
+    <article class="post">
             <header>
-                <h1>Data structures: stack in practice</h1>
+                <h1>ES2015 Class extends</h1>
                 <h5>
-                    <time datetime="2015-10-01">10/01/2015</time>
+                    <time datetime="2015-12-08">12/08/2015</time>
                 </h5>
-                    <span class="label label-primary"><a href="../tag/javascript/"><i class="fa fa-tag"></i> JavaScript</a></span>
             </header>
 
             <section class="posts">
-                <p>I have been looking into different data structures as I prepare for Hack Reactor and the one I would like to talk about here is a stack.  I ran across this problem on <a href="http://www.coderbyte.com/CodingArea/Editor.php?ct=Bracket%20Matcher&amp;lan=JavaScript">Coderbyte</a> and it seems like a perfect candidate for application of this concept.</p>
+                <h4 id="funwithfatarrows">Fun with Fat arrows</h4>
 
-<blockquote>
-  <p><em>Using the JavaScript language, have the function BracketMatcher(str) take the str parameter being passed and return 1 if the brackets are correctly matched and each one is accounted for. Otherwise return 0. For example: if str is "(hello (world))", then the output should be 1, but if str is "((hello (world))" the the output should be 0 because the brackets do not correctly match up. Only "(" and ")" will be used as brackets. If str contains no brackets return 1.</em></p>
-</blockquote>
+<h6 id="howilearnedtoabandonthe">How I learned to abandon the ;</h6>
 
-<h4 id="whatisastack">What is a stack?</h4>
+<p>I have started writing and thinking of my apps in the new ES2015 standard and wanted to muse on the construction of a subclass using the <code>class SubClassName extends SuperClass { }</code> structure.</p>
 
-<p>Think of a stack as a can of Pringles, you can add chips and remove chips from only one side. A stack is a basic linear data structure where the last value added in is the first value out.  It often is implemented as an array or a linked list since a stack only needs very basic methods to control access such as <code>pop()</code> to remove a value and <code>push()</code> to add a value.  The best way to examine it further is to see it in action.</p>
+<h4 id="subclassingisstandardized">Subclassing is standardized</h4>
 
-<h4 id="bracketmatcher">BracketMatcher</h4>
+<p>Subclassing in ES2015 is great, it is simple and makes sense.  All you need are the constructor method and any methods you add beyond that. Let's run through an example</p>
 
-<p>Let's examine what the problem asks for and why a stack is the appropriate data structure for the job.  The issue with balancing brackets is in order to properly implement, we need to keep track of them as they go since an open bracket <code>(</code> is not always going to be followed by it's pair in the case of nested brackets as seen in the example <code>(hello (world))</code>.</p>
+<pre><code>class Transaction extends db.Model {
+  /*Using the class syntax you declare which subclass and superclass*/
 
-<p>Here is where a stack is good.  Each <code>(</code> it comes across will be added to the top and is removed only when a <code>)</code> is encountered.  A balanced string will have an empty stack at the end of it.  Let's see my solution to the problem.</p>
+  constructor(attributes){
+    /*Here you will pass in any params that would be set at instantiation.*/ 
 
-<pre><code>function BracketMatcher(str){
-  var stack = [];
-  for(var i = 0; i &lt; str.length; i++){
-    if(str[i] === '('){
-      stack.push(str[i]);
-   } else if ( str[i] === ')'){
-     if(stack[stack.length-1] === '('){
-       stack.pop();
-     } else {
-       return 0;
-     }
-   }
- }
- if( stack.length === 0 ){
-   return 1;
- }
- return 0;
+    super()
+    /*Make sure you call super and include any parameters you want to be included in the super class*/
+
+    this.tableName = 'transactions'
+    this.attributes = attributes
+  }
+
+categories(params){
+  /*This is the format for methods you want to add to the subclass prototype*/
+
+  return this.hasMany(Category, 'id_Category')
 }
 </code></pre>
 
-<p>We initialize a stack in the form of an array and iterate across the string.  As it goes it will add and remove <code>(</code>'s from the stack.  If all goes well we will have a balanced string indicated by an empty stack after the iteration.  If so, we have our return value of 1.</p>
+<p>My general consensus on the syntax for extending a class in EC2015 is that it is a simple and straightforward abstraction on the subclass instantiation patterns from ES5 and makes a lot of sense if you familiar with them.</p>
+
+<p>Some gotchas I encountered in the use was not calling super in the constructor.  It is required in order to form that association.  Also the constructor function is required even if you are only adding methods to the subclass and not properties. </p>
 
                 <hr>
                 <div class="social-buttons">
-                    <a href="https://twitter.com/share?text=Data%20structures:%20stack%20in%20practice" class="popup fa fa-twitter btn btn-info"></a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://toddlevin.net/data-structures-stack/" class="popup fa fa-facebook btn btn-primary"></a>
-                    <a href="https://plus.google.com/share?url=http://toddlevin.net/data-structures-stack/" class="popup fa fa-google btn btn-danger"></a>
+                    <a href="https://twitter.com/share?text=ES2015%20Class%20extends" class="popup fa fa-twitter btn btn-info"></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://toddlevin.net/es2015-class-extends/" class="popup fa fa-facebook btn btn-primary"></a>
+                    <a href="https://plus.google.com/share?url=http://toddlevin.net/es2015-class-extends/" class="popup fa fa-google btn btn-danger"></a>
                 </div>
             </section>
 
@@ -169,7 +162,7 @@
 
         <script type="text/javascript">
         var disqus_shortname = 'toddglevin';
-        var disqus_identifier = '5';
+        var disqus_identifier = '12';
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';

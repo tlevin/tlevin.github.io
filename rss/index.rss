@@ -1,4 +1,44 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Todd Levin</title><description>Things that intrigue me</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Fri, 13 Nov 2015 22:14:21 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Building a simple Chrome Extension</title><description>&lt;p&gt;I was recently able to make a chrome extension as a personal project and I was surprised at the ease of making something work.  I wanted to share what I found to be true and where to start.&lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Todd Levin</title><description>Things that intrigue me</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Tue, 08 Dec 2015 22:04:09 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>ES2015 Class extends</title><description>&lt;h4 id="funwithfatarrows"&gt;Fun with Fat arrows&lt;/h4&gt;
+
+&lt;h6 id="howilearnedtoabandonthe"&gt;How I learned to abandon the ;&lt;/h6&gt;
+
+&lt;p&gt;I have started writing and thinking of my apps in the new ES2015 standard and wanted to muse on the construction of a subclass using the &lt;code&gt;class SubClassName extends SuperClass { }&lt;/code&gt; structure.&lt;/p&gt;
+
+&lt;h4 id="subclassingisstandardized"&gt;Subclassing is standardized&lt;/h4&gt;
+
+&lt;p&gt;Subclassing in ES2015 is great, it&lt;/p&gt;</description><link>http://localhost:2368/es2015-class-extends/</link><guid isPermaLink="false">78a4afaa-2a4d-4d72-81a3-a4edf096f9a6</guid><dc:creator>Todd Levin</dc:creator><pubDate>Tue, 08 Dec 2015 22:01:25 GMT</pubDate><content:encoded>&lt;h4 id="funwithfatarrows"&gt;Fun with Fat arrows&lt;/h4&gt;
+
+&lt;h6 id="howilearnedtoabandonthe"&gt;How I learned to abandon the ;&lt;/h6&gt;
+
+&lt;p&gt;I have started writing and thinking of my apps in the new ES2015 standard and wanted to muse on the construction of a subclass using the &lt;code&gt;class SubClassName extends SuperClass { }&lt;/code&gt; structure.&lt;/p&gt;
+
+&lt;h4 id="subclassingisstandardized"&gt;Subclassing is standardized&lt;/h4&gt;
+
+&lt;p&gt;Subclassing in ES2015 is great, it is simple and makes sense.  All you need are the constructor method and any methods you add beyond that. Let's run through an example&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class Transaction extends db.Model {
+  /*Using the class syntax you declare which subclass and superclass*/
+
+  constructor(attributes){
+    /*Here you will pass in any params that would be set at instantiation.*/ 
+
+    super()
+    /*Make sure you call super and include any parameters you want to be included in the super class*/
+
+    this.tableName = 'transactions'
+    this.attributes = attributes
+  }
+
+categories(params){
+  /*This is the format for methods you want to add to the subclass prototype*/
+
+  return this.hasMany(Category, 'id_Category')
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;My general consensus on the syntax for extending a class in EC2015 is that it is a simple and straightforward abstraction on the subclass instantiation patterns from ES5 and makes a lot of sense if you familiar with them.&lt;/p&gt;
+
+&lt;p&gt;Some gotchas I encountered in the use was not calling super in the constructor.  It is required in order to form that association.  Also the constructor function is required even if you are only adding methods to the subclass and not properties. &lt;/p&gt;</content:encoded></item><item><title>Building a simple Chrome Extension</title><description>&lt;p&gt;I was recently able to make a chrome extension as a personal project and I was surprised at the ease of making something work.  I wanted to share what I found to be true and where to start.&lt;/p&gt;
 
 &lt;h2 id="easymodeyo"&gt;Easymode: Yo&lt;/h2&gt;
 
