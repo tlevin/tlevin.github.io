@@ -1,0 +1,130 @@
+/*
+
+1. Reset / Normalize
+2. Colors
+3. Fonts
+4. Layout
+  i. Header
+  ii. NavBar
+  iii. Content
+  iv. Footer
+
+*/
+/************************** 1. Reset ***************************/
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+div,
+span,
+th,
+tr,
+td,
+table,
+nav,
+body {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+/************************** 2. Colors ***************************/
+body {
+  background-color: #1c1d21;
+}
+nav {
+  background-color: #445878;
+}
+.brand {
+  color: #eeeff7;
+}
+.grids {
+  background-color: #92cdcf;
+  font-size: 2em;
+  color: #eeeff7;
+}
+/************************** 3. Fonts ***************************/
+.brand,
+.label {
+  font-family: 'Maven Pro', sans-serif;
+}
+.fa {
+  font-size: 40px;
+  color: #eeeff7;
+}
+/************************** 4. Layout ***************************/
+nav {
+  display: flex;
+  border-bottom: 1px solid #92cdcf;
+  height: 4em;
+  align-items: center;
+  justify-content: flex-end;
+}
+.brand {
+  margin-right: auto;
+  margin-left: 5px;
+  font-size: 2.5em;
+}
+.icon {
+  margin: 0 7px;
+}
+.fa-github {
+  margin-right: 15px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap-reverse;
+}
+.grids {
+  height: 300px;
+  width: 300px;
+  margin: 5px;
+}
+.labelAlign,
+.oink,
+.tableSurf,
+.snip,
+.pantomics,
+.resume {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 500px;
+  background-size: cover;
+}
+.oink {
+  background: url("../img/oinkFin.png");
+}
+.tableSurf {
+  background: url("../img/tableSurf.png");
+}
+.snip {
+  background: url("../img/sniphub.png");
+}
+.pantomics {
+  background: url("../img/pantomics.png");
+}
+.resume {
+  order: 1;
+  flex-grow: 1;
+  background-size: auto auto;
+  background: url("../img/resume.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  max-width: 1200px;
+  height: 400px;
+}
+.label {
+  background-color: #445878;
+  padding: 10px;
+  padding-bottom: 0;
+  -webkit-box-shadow: 1px 2px 9px 0px #92cdcf;
+  -moz-box-shadow: 1px 2px 9px 0px #92cdcf;
+  box-shadow: 1px 2px 9px 0px #92cdcf;
+}

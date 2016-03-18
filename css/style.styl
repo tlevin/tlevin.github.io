@@ -1,0 +1,134 @@
+/*
+
+1. Reset / Normalize
+2. Colors
+3. Fonts
+4. Layout
+  i. Header
+  ii. NavBar
+  iii. Content
+  iv. Footer
+
+*/
+
+
+/************************** 1. Reset ***************************/
+
+a, p, h1, h2, h3, h4, div, span, th, tr, td, table, nav, body
+  margin: 0
+  padding: 0
+
+a
+  text-decoration none
+/************************** 2. Colors ***************************/
+
+background = #1C1D21
+primaryText = #EEEFF7
+primary = #92CDCF
+secondary = #445878
+
+body
+  background-color background
+
+nav
+  background-color secondary
+
+.brand
+  color primaryText
+
+.grids
+  background-color primary
+  font-size 2em
+  color primaryText
+
+/************************** 3. Fonts ***************************/
+
+.brand, .label
+  font-family 'Maven Pro', sans-serif
+.fa
+  font-size 40px
+  color primaryText
+/************************** 4. Layout ***************************/
+
+
+// 4.i Header
+
+
+// 4.ii NavBar
+
+nav
+  display flex
+  border-bottom 1px solid primary
+  height 4em
+  align-items center
+  justify-content flex-end
+
+.brand
+  margin-right auto
+  margin-left 5px
+  font-size 2.5em
+
+.icon
+  margin 0 7px
+
+.fa-github
+  margin-right 15px
+  
+// 4.iii Content
+
+  
+.container
+  display flex
+  flex-direction row
+  justify-content center
+  align-content center
+  flex-wrap wrap-reverse
+  
+.grids
+  height 300px
+  width 300px
+  margin 5px
+
+// Aligns label to grid square
+.labelAlign
+  display flex
+  justify-content flex-end
+  align-items flex-end
+  width 500px
+  background-size cover
+
+// Project grids
+.oink
+  background url('../img/oinkFin.png')
+  @extend .labelAlign
+  
+
+.tableSurf
+  background url('../img/tableSurf.png')
+  @extend .labelAlign
+
+.snip
+  background url('../img/sniphub.png')
+  @extend .labelAlign
+  
+.pantomics
+  background url('../img/pantomics.png')
+  @extend .labelAlign
+.resume
+  @extend .labelAlign
+  order 1
+  flex-grow 1
+  background-size auto auto
+  background url('../img/resume.png')
+  background-position left
+  background-repeat no-repeat
+  max-width: 1200px
+  height 400px
+
+.label
+  background-color secondary
+  padding 10px
+  padding-bottom 0
+  -webkit-box-shadow: 1px 2px 9px 0px primary
+  -moz-box-shadow: 1px 2px 9px 0px primary
+  box-shadow: 1px 2px 9px 0px primary  
